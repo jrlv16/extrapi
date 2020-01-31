@@ -5,3 +5,5 @@ django-search-views>=0.3.7
 djangorestframework>=3.11.0
 djangorestframework-simplejwt>=4.4.0
 flake8>=3.7.9
+psycopg2>=2.8.4
+
