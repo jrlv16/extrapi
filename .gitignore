@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Staticfiles
+staticfiles/admin/
+staticfiles/rest_framework/
