@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-if 'aws' in 'HOST_NAME':
+if 'amazonaws.com' in os.environ:
     DATABASES['default'] = dj_database_url.config(conn_max_age=600, 
                                                   ssl_require=True)
 else:    
