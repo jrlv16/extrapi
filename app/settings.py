@@ -79,24 +79,24 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-if 'DATABASE_URL' in os.environ:
+# if 'DATABASE_URL' in os.environ:
 
-    DATABASES = {
-        'default': {
-            dj_database_url.config(conn_max_age=600, 
-                                                  ssl_require=True),
-        }
+#     DATABASES = {
+#         'default': {
+#             dj_database_url.config(conn_max_age=600, 
+#                                                   ssl_require=True),
+#         }
+#     }
+# else:    
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': os.environ.get('DB_HOST'),
+        'NAME': os.environ.get('DB_NAME'),
+        'USER':os.environ.get('DB_USER'),
+        'PASSWORD':os.environ.get('DB_PASS'),
     }
-else:    
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'HOST': os.environ.get('DB_HOST'),
-            'NAME': os.environ.get('DB_NAME'),
-            'USER':os.environ.get('DB_USER'),
-            'PASSWORD':os.environ.get('DB_PASS'),
-        }
-    }
+}
 
 
 # Password validation
